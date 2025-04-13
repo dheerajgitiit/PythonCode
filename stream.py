@@ -8,11 +8,11 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 @st.cache_resource
 def load_model_and_encoders():
     # Load trained model
-    with open("/home/lenovo/PycharmProjects/test_api/processed_images/my_random_forest_model.pkl", "rb") as file:
+    with open("/content/my_random_forest_model.pkl", "rb") as file:
         model = pickle.load(file)
 
     # Load training dataset
-    dataset = pd.read_csv("/home/lenovo/PycharmProjects/test_api/processed_images/Salary Data.csv").dropna()
+    dataset = pd.read_csv("/content/Salary Data.csv").dropna()
 
     # Encode Gender
     gender_encoder = LabelEncoder()
